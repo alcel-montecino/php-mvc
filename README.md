@@ -43,7 +43,6 @@ cd php-mvc
 ```
 
 2. **Configure the database**
-
 Create MySQL database mvc_test
 Import the users table schema:
 CREATE TABLE users(
