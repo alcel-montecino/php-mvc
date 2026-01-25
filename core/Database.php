@@ -9,4 +9,10 @@ class Database {
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch(PDOException $e) { die("DB Error: ".$e->getMessage()); }
     }
+
+    public function query($sql, $params=[]){
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute($params);
+        return $stmt;
+    }
 }

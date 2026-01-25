@@ -1,21 +1,26 @@
 # PHP MVC CRUD Application
 
 ## Description
-This project is a **simple yet fully functional PHP MVC framework** with **CRUD operations for users**, designed for learning or as a lightweight base for larger applications. It demonstrates a clean separation of concerns with **Models, Views, and Controllers**, integrates **MySQL database**, and includes **JavaScript interactivity** for improved user experience.
+This project is a **fully functional PHP MVC framework** with **CRUD operations for users**, designed for learning or as a lightweight base for larger applications. It demonstrates a clean separation of concerns with **Models, Views, and Controllers**, integrates **MySQL database**, and includes **JavaScript interactivity** for improved user experience.
 
-The framework is structured to be **AI IDE-friendly**, making it easy to use tools like **GitHub Copilot**, **Tabnine**, or **Codeium** for smart code suggestions.
+The frontend uses **Bootstrap 5** for a responsive UI, and the project is structured to be **AI IDE-friendly**, making it easy to use tools like **GitHub Copilot**, **Tabnine**, or **Codeium** for smart code suggestions.
+
+It also supports **AJAX modals** and **API endpoints**, making the app SPA-ready (Single Page Application) for smoother user interactions.
 
 ---
 
 ## Features
 
-- **MVC Architecture**: Clean separation of logic (Controller), data (Model), and presentation (View)
+- **MVC Architecture**: Clear separation of logic (Controller), data (Model), and presentation (View)
 - **CRUD Operations**: Create, Read, Update, Delete users with MySQL
-- **JavaScript Interactivity**: For actions like delete confirmation and dynamic updates
-- **MySQL Database Integration**: Secure and easy-to-use PDO connection
+- **Bootstrap 5 UI**: Responsive, modern interface
+- **AJAX Interactivity**: Add, edit, delete users dynamically without page reload
+- **SPA-Ready**: Single Page Application behavior for smoother UX
+- **MySQL Database Integration**: Secure PDO-based connection
+- **API Endpoints**: JSON APIs for users (`/api/users`, `/api/users/{id}`)
 - **AI IDE Friendly**: Structured code and documentation for AI-assisted development
 - **Routing**: Pretty URLs handled via `.htaccess`
-- **Lightweight**: No external dependencies required
+- **Lightweight**: No external dependencies besides Bootstrap
 
 ---
 
@@ -23,16 +28,15 @@ The framework is structured to be **AI IDE-friendly**, making it easy to use too
 
 - **Backend**: PHP 8+
 - **Database**: MySQL / MariaDB
-- **Frontend**: HTML, CSS, JavaScript (vanilla)
-- **Development Tools**: VS Code / PhpStorm with AI plugins (GitHub Copilot)
+- **Frontend**: HTML, CSS, AJAX, JavaScript, Bootstrap 5
+- **Development Tools**: VS Code / PhpStorm with AI plugins (GitHub Copilot, Tabnine, Codeium)
 
 ---
-
-
 
 ## Getting Started
 
 ```bash
+
 1. **Clone the repository**
 
 git clone https://github.com/username/php-mvc.git
@@ -64,3 +68,11 @@ List users: /
 Add user: /user/add
 Edit user: /user/edit/{id}
 Delete user: /user/delete/{id}
+
+5. **API Endpoints**
+Get all users: GET /api/users
+Get single user: GET /api/users/{id}
+Create user: POST /api/users/create
+Update user: PUT /api/users/{id}/update
+Delete user: DELETE /api/users/{id}/delete
+Use Postman or JSON in the request body for POST and PUT requests.
