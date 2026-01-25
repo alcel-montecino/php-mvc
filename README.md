@@ -51,6 +51,7 @@ CREATE TABLE users(
   name VARCHAR(100),
   email VARCHAR(100)
 );
+or use script.sql
 
 3. **Update Database Credentials**
 Either in .env (if implemented) or in core/Database.php:
