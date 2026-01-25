@@ -77,7 +77,7 @@ Update user: PUT /api/users/{id}/update
 Delete user: DELETE /api/users/{id}/delete
 Use Postman or JSON in the request body for POST and PUT requests.
 
----
+```
 
 ## Notes
 
