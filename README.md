@@ -76,3 +76,13 @@ Create user: POST /api/users/create
 Update user: PUT /api/users/{id}/update
 Delete user: DELETE /api/users/{id}/delete
 Use Postman or JSON in the request body for POST and PUT requests.
+
+---
+
+## Notes
+
+---
+Fully Bootstrap 5-styled for responsive tables and forms
+AJAX-powered modals improve UX and avoid full page reloads
+Ready for SPA-like behavior with API integration
+Easy to expand with new tables, authentication, and features
