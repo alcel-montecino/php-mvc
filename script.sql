@@ -17,3 +17,20 @@ CREATE TABLE IF NOT EXISTS users (
 INSERT INTO users (name, email, password)
 VALUES ('Admin', 'admin@example.com', 
         '$2y$10$K8BDSVjEexxyPp/dHpn0QeNkoI3/NZfYjClp.QKbbOP13oQ1p/7E2');
+
+-- Create posts table
+CREATE TABLE IF NOT EXISTS posts (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    content TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+-- Example posts
+INSERT INTO posts (user_id, title, content)
+VALUES 
+(1, 'Welcome Post', 'This is the first post of Admin.'),
+(1, 'PHP MVC Tutorial', 'Learn how to build a PHP MVC CRUD app.');
