@@ -32,9 +32,9 @@ The framework is structured to be **AI IDE-friendly**, making it easy to use too
 
 ## Getting Started
 
+```bash
 1. **Clone the repository**
 
-```bash
 git clone https://github.com/username/php-mvc.git
 cd php-mvc
 
