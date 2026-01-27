@@ -1,16 +1,31 @@
 <?php
 class Database {
-    private $host = 'localhost', $db = 'mvc_test', $user = 'root', $pass = '';
-    public $pdo;
+    private $pdo;
 
-    public function __construct() {
+    public function __construct(){
+        $host = 'db'; // Docker service name
+        $db   = 'mvc_test';
+        $user = 'root';
+        $pass = 'root';
+        $charset = 'utf8mb4';
+
+        $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+        $options = [
+            PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+        ];
+
         try {
-            $this->pdo = new PDO("mysql:host=$this->host;dbname=$this->db;charset=utf8mb4", $this->user, $this->pass);
-            $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } catch(PDOException $e) { die("DB Error: ".$e->getMessage()); }
+            $this->pdo = new PDO($dsn, $user, $pass, $options);
+        } catch (\PDOException $e) {
+            die("DB Connection failed: " . $e->getMessage());
+        }
+    }
+    public function prepare($sql) {
+        return $this->pdo->prepare($sql);
     }
 
-    public function query($sql, $params=[]){
+    public function query($sql, $params = []){
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute($params);
         return $stmt;
