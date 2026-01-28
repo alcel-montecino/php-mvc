@@ -60,5 +60,7 @@ CREATE TABLE IF NOT EXISTS comments (
 
 -- Example comments
 INSERT INTO comments (post_id, user_id, content) VALUES
-(1, 2, 'Great first post!'),
-(2, 2, 'Excited to learn MVC.');
+(1, 2, 'Nice post, Alice!'),
+(1, 3, 'Welcome to the platform!'),
+(2, 1, 'Interesting thoughts, Bob.'),
+(3, 2, 'Congrats on finishing the project!');
